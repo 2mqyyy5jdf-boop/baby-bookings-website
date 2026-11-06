@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B0B0B">
-  <meta name="description" content="BABY BOOKINGS — Independent electronic music agency. Emerging DJs. Heavy sounds. Techno, Hardgroove, Trance and Bounce. Germany-wide.">
+  <meta name="description" content="BABY BOOKINGS — Independent booking agency. Artist-first. Always intentional. Emerging DJs and heavy sounds, Germany-wide.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="BABY BOOKINGS — No Ordinary Bookings">
-  <meta property="og:description" content="Emerging DJs. Heavy Sounds. Independent electronic music agency.">
+  <meta property="og:description" content="Independent booking agency. Artist-first. Always intentional.">
   <meta property="og:url" content="https://babybookings.de/">
   <link rel="icon" type="image/png" href="baby-bookings-logo.png">
   <link rel="canonical" href="https://babybookings.de/">
@@ -20,15 +20,12 @@
 
   <style>
     :root {
-      /* Brand colours matched to the uploaded logo */
       --black: #0B0B0B;
       --pink: #F90164;
       --green: #D6F501;
       --white: #F4F1EB;
       --muted: #AAA69F;
       --line: rgba(244, 241, 235, .20);
-      --pink-soft: rgba(249, 1, 100, .14);
-      --green-soft: rgba(214, 245, 1, .12);
     }
 
     * {
@@ -67,7 +64,7 @@
     .pink { color: var(--pink); }
     .green { color: var(--green); }
 
-    /* Navigation */
+    /* Header */
 
     .site-header {
       min-height: 78px;
@@ -101,14 +98,15 @@
     .main-nav {
       display: flex;
       align-items: center;
-      gap: clamp(16px, 2.5vw, 34px);
+      gap: clamp(14px, 2.2vw, 30px);
     }
 
     .main-nav a {
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: .11em;
       transition: color .2s ease, border-color .2s ease;
+      white-space: nowrap;
     }
 
     .main-nav a:hover {
@@ -134,7 +132,7 @@
       cursor: pointer;
     }
 
-    /* Common section styling */
+    /* Shared sections */
 
     section {
       padding: 112px 8%;
@@ -321,7 +319,84 @@
       color: var(--green);
     }
 
-    /* Artists and Instagram tags */
+    /* Agency positioning */
+
+    .positioning {
+      background: #101010;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .positioning::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -190px;
+      top: 100px;
+      border: 1px solid rgba(249, 1, 100, .38);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 28px rgba(249, 1, 100, .025),
+        0 0 0 62px rgba(249, 1, 100, .018);
+      pointer-events: none;
+    }
+
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 9%;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .positioning h2 {
+      max-width: 700px;
+      font-size: clamp(44px, 7.2vw, 88px);
+      line-height: .9;
+      letter-spacing: -.085em;
+    }
+
+    .positioning h2 span {
+      color: var(--pink);
+    }
+
+    .positioning-lead {
+      color: var(--green);
+      font: 11px 'DM Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .positioning-copy {
+      max-width: 570px;
+      color: #C5C1BA;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .positioning-copy p + p {
+      margin-top: 18px;
+    }
+
+    .positioning-close {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--white);
+      font-weight: 600;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.35;
+    }
+
+    .positioning-close span {
+      color: var(--pink);
+    }
+
+    /* Artists */
 
     .artists-heading {
       font-size: clamp(52px, 9vw, 112px);
@@ -395,7 +470,7 @@
       margin-top: 22px;
     }
 
-    /* Connect section */
+    /* Connect */
 
     .connections {
       background: #101010;
@@ -462,7 +537,7 @@
       color: var(--black);
     }
 
-    /* Contact and social links */
+    /* Contact */
 
     .contact h2 {
       font-size: clamp(52px, 10vw, 122px);
@@ -552,7 +627,7 @@
       color: var(--pink);
     }
 
-    /* Mobile */
+    /* Responsive layout */
 
     @media (max-width: 760px) {
       .site-header {
@@ -627,9 +702,18 @@
         margin-bottom: 40px;
       }
 
-      .about-grid {
+      .about-grid,
+      .positioning-grid {
         grid-template-columns: 1fr;
         gap: 31px;
+      }
+
+      .positioning::after {
+        width: 230px;
+        height: 230px;
+        right: -150px;
+        top: auto;
+        bottom: -100px;
       }
 
       .connections-bottom {
@@ -675,7 +759,9 @@
         scroll-behavior: auto;
       }
 
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         transition: none !important;
       }
     }
@@ -693,6 +779,7 @@
 
     <nav class="main-nav" id="navigation" aria-label="Main navigation">
       <a href="#about">About</a>
+      <a href="#approach">Our approach</a>
       <a href="#artists">Artists</a>
       <a href="#connections">Connect</a>
       <a href="#contact" class="nav-contact">Contact ↗</a>
@@ -713,10 +800,7 @@
       <div class="hero-index mono">01 — EST. 2026</div>
 
       <div class="hero-bottom">
-        <p>
-          Emerging DJs. Heavy sounds. Connecting artists,
-          collectives and the people moving electronic music forward.
-        </p>
+        <p>Emerging DJs. Heavy sounds. Connecting artists, collectives and the people moving electronic music forward.</p>
 
         <div class="hero-claim mono">
           <strong>NO ORDINARY BOOKINGS.</strong>
@@ -735,17 +819,9 @@
         <h2>MORE THAN <span>JUST BOOKINGS.</span></h2>
 
         <div class="about-copy">
-          <p>
-            BABY BOOKINGS is an independent platform
-            built around emerging electronic music talent.
-          </p>
+          <p>BABY BOOKINGS is an independent platform built around emerging electronic music talent.</p>
 
-          <p>
-            We believe in new sounds, real connections
-            and giving artists room to grow. Bringing DJs,
-            producers, promoters and collectives closer together
-            — one connection at a time.
-          </p>
+          <p>We believe in new sounds, real connections and giving artists room to grow. Bringing DJs, producers, promoters and collectives closer together — one connection at a time.</p>
 
           <div class="genre-tags" aria-label="Music genres">
             <span class="genre-tag">Techno</span>
@@ -757,18 +833,38 @@
       </div>
     </section>
 
+    <section class="positioning" id="approach">
+      <div class="section-top">
+        <span class="section-number mono">02 / OUR APPROACH</span>
+        <span class="section-label mono">Artist-first. Always intentional.</span>
+      </div>
+
+      <div class="positioning-grid">
+        <h2>THE RIGHT<br><span>ARTISTS.</span><br>THE RIGHT<br>SPACES.</h2>
+
+        <div class="positioning-copy">
+          <div class="positioning-lead">Independent booking agency.<br>Artist-first. Always intentional.</div>
+
+          <p>We represent artists we genuinely believe in — musically, creatively and personally.</p>
+
+          <p>Our approach is built on honest connections, shared values and finding the right spaces for the right artists.</p>
+
+          <p>No random placements. No compromises on what we believe in.</p>
+
+          <div class="positioning-close">Just music, people and connections that <span>make sense.</span></div>
+        </div>
+      </div>
+    </section>
+
     <section id="artists">
       <div class="section-top">
-        <span class="section-number mono">02 / THE ARTISTS</span>
+        <span class="section-number mono">03 / THE ARTISTS</span>
         <span class="section-label mono">Fresh energy. New perspectives.</span>
       </div>
 
-      <h2 class="artists-heading">
-        OUR<br><span class="pink">PEOPLE.</span>
-      </h2>
+      <h2 class="artists-heading">OUR<br><span class="pink">PEOPLE.</span></h2>
 
       <div class="artist-list">
-
         <div class="artist-row">
           <span class="artist-name">Ichmeinjogi</span>
 
@@ -776,123 +872,82 @@
             <span class="artist-role">DJ / Producer</span><br>
             Artist profile<br>
 
-            <a class="social-tag"
-               href="https://www.instagram.com/ichmeinjogi/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Ichmeinjogi on Instagram">
-
+            <a class="social-tag" href="https://www.instagram.com/ichmeinjogi/" target="_blank" rel="noopener noreferrer" aria-label="Ichmeinjogi on Instagram">
               <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
                 <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
                 <circle cx="17.5" cy="6.7" r="1.1" fill="currentColor"/>
               </svg>
-
               @ichmeinjogi ↗
             </a>
           </div>
         </div>
-
       </div>
 
-      <p class="roster-note mono">
-        More artists. More sounds. More connections.
-      </p>
+      <p class="roster-note mono">More artists. More sounds. More connections.</p>
     </section>
 
     <section class="connections" id="connections">
       <div class="section-top">
-        <span class="section-number mono">03 / CONNECT THE SCENE</span>
+        <span class="section-number mono">04 / CONNECT THE SCENE</span>
         <span class="section-label mono">Open to possibilities</span>
       </div>
 
-      <h2>
-        LET'S<br>
-        <span>MOVE</span><br>
-        THINGS.
-      </h2>
+      <h2>LET'S<br><span>MOVE</span><br>THINGS.</h2>
 
       <div class="connections-bottom">
-        <p>
-          Artists, DJs, producers, promoters, clubs and collectives
-          — we're always interested in new people, ideas and collaborations.
-        </p>
+        <p>Artists, DJs, producers, promoters, clubs and collectives — we're always interested in new people, ideas and collaborations.</p>
 
-        <a href="mailto:booking@babybookings.de" class="connection-link">
-          Start a conversation ↗
-        </a>
+        <a href="mailto:booking@babybookings.de" class="connection-link">Start a conversation ↗</a>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="section-top">
-        <span class="section-number mono">04 / GET IN TOUCH</span>
+        <span class="section-number mono">05 / GET IN TOUCH</span>
         <span class="section-label mono">Bookings · Collaborations · Connections</span>
       </div>
 
       <h2>MAKE<br>CONTACT<span>.</span></h2>
 
-      <p class="contact-intro">
-        Got something in mind? Let's talk.
-      </p>
+      <p class="contact-intro">Got something in mind? Let's talk.</p>
 
-      <a class="email-link" href="mailto:booking@babybookings.de">
-        booking@babybookings.de ↗
-      </a>
+      <a class="email-link" href="mailto:booking@babybookings.de">booking@babybookings.de ↗</a>
 
       <div class="contact-socials" aria-label="Social media">
-
-        <a href="https://www.instagram.com/baby.bookings/"
-           target="_blank"
-           rel="noopener noreferrer">
-
+        <a href="https://www.instagram.com/baby.bookings/" target="_blank" rel="noopener noreferrer">
           <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="17.5" cy="6.7" r="1.1" fill="currentColor"/>
           </svg>
-
           @baby.bookings ↗
         </a>
 
-        <a href="https://www.instagram.com/ichmeinjogi/"
-           target="_blank"
-           rel="noopener noreferrer">
-
+        <a href="https://www.instagram.com/ichmeinjogi/" target="_blank" rel="noopener noreferrer">
           <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="17.5" cy="6.7" r="1.1" fill="currentColor"/>
           </svg>
-
           @ichmeinjogi ↗
         </a>
-
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-
-    <a href="#home" class="brand-logo" aria-label="BABY BOOKINGS home">
+    <a href="#home" class="brand-logo footer-logo" aria-label="BABY BOOKINGS home">
       <img src="baby-bookings-logo.png" alt="BABY BOOKINGS logo">
     </a>
 
     <span class="mono">© 2026 BABY BOOKINGS</span>
 
     <div class="footer-social mono">
-      <a href="https://www.instagram.com/baby.bookings/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Instagram ↗
-      </a>
-
-      <a href="mailto:booking@babybookings.de">
-        Email ↗
-      </a>
+      <a href="https://www.instagram.com/baby.bookings/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="mailto:booking@babybookings.de">Email ↗</a>
     </div>
-
   </footer>
 
   <script>
@@ -903,12 +958,7 @@
       const isOpen = navigation.classList.toggle('open');
 
       menuButton.setAttribute('aria-expanded', String(isOpen));
-
-      menuButton.setAttribute(
-        'aria-label',
-        isOpen ? 'Close navigation' : 'Open navigation'
-      );
-
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
       menuButton.textContent = isOpen ? '×' : '☰';
     });
 
